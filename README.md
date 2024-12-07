@@ -96,7 +96,7 @@ In a separate terminal:
    cd UserManagerClient
    npm run build
    ```
-   This generates a `dist` directory containing the production-ready React app.
+   This generates a `dist` directory containing the production-ready React app. copy the contents of the `dist` to `UserManagerAPI/frontend_build`
 
 2. **Collect Static Files in Django**:
    Ensure `STATICFILES_DIRS` and `templates` settings are configured. Once done:
@@ -148,12 +148,6 @@ Press `Ctrl+C` in the terminal running `docker run`, or run `docker stop` on the
 - **`DEBUG`**: Ensure `DEBUG=False` in production (e.g., when running via Docker) for Whitenoise static serving.
 - **`ALLOWED_HOSTS`**: Set `ALLOWED_HOSTS = ['*']` or a specific domain/IP in `UserManagerAPI/settings.py` for production mode.
 - **Database**: By default uses SQLite. For production, consider configuring PostgreSQL or another robust DB.
-
-## Troubleshooting
-
-- **CORS Errors**: If calling the API from a different port in development, you may need `django-cors-headers` or a proxy config.
-- **Static Files Not Found**: Check `STATICFILES_DIRS`, `STATIC_ROOT`, run `collectstatic` and ensure Whitenoise is enabled.
-- **Pagination Links Not Working**: Ensure the backend is returning `next` and `previous` links correctly. Check DRF pagination settings.
 
 ## License
 

@@ -1,4 +1,4 @@
-function UserList({ users, onEditClick, onDeleteUser, nextPage, prevPage, onNextPage, onPrevPage }) {
+function UserList({ users, onEditClick, onDeleteUser, pagination, onNextPage, onPrevPage }) {
     return (
       <div>
         <h2>User List</h2>
@@ -33,8 +33,8 @@ function UserList({ users, onEditClick, onDeleteUser, nextPage, prevPage, onNext
             </table>
   
             <div style={{ marginTop: '10px' }}>
-              {prevPage && <button onClick={onPrevPage}>Previous</button>}
-              {nextPage && <button onClick={onNextPage} style={{ marginLeft: '10px' }}>Next</button>}
+              {pagination.prevPage && <button onClick={onPrevPage}>Previous</button>}
+              {pagination.nextPage && <button onClick={onNextPage} style={{ marginLeft: '10px' }}>Next</button>}
             </div>
           </>
         )}

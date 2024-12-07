@@ -7,5 +7,5 @@ urlpatterns = [
     path('users', UserListCreateAPIView.as_view(), name='user-list-create'),
     path('users/<int:id>', UserRetrieveUpdateDestroyAPIView.as_view(), name='user-detail'),
 
-    path('', TemplateView.as_view(template_name="index.html"), name='user-list-create'),
+    path('', TemplateView.as_view(template_name="index.html"), name='frontend'),
 ]
